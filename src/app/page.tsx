@@ -81,18 +81,30 @@ const page = () => {
           <Typewritter />
           <Story />
           <Insta />
-          <PhotoReveal />
-          <Slider />
-          <div className={styles.img1}>
+          <div className={styles.img3}>
             <Image src="/images/six.png" fill alt="open" loading="lazy" />
           </div>
+          <PhotoReveal />
+          <div className={styles.img3}>
+            <Image src="/images/ml.png" fill alt="open" loading="lazy" />
+          </div>
+          <Slider />
+          <div className={styles.img2}>
+            <Image src="/images/four.png" fill alt="open" loading="lazy" />
+          </div>
           <OpenChat />
+          <div className={styles.img2}>
+            <Image src="/images/lake.png" fill alt="open" loading="lazy" />
+          </div>
           <Balloons />
+          <VideoAdil />
           <div className={styles.img1}>
             <Image src="/images/winter.png" fill alt="open" loading="lazy" />
           </div>
-          <VideoAdil />
           <LastChat />
+          <div className={styles.img2}>
+            <Image src="/images/end.png" fill alt="open" loading="lazy" />
+          </div>
         </>
       )}
     </div>

@@ -7,7 +7,7 @@ export default function Chat({ visible, onClose }) {
   const [showTyping, setShowTyping] = useState(false); // для левого сообщения
 
   const fullMessage =
-    "Я хочу построить с тобой наш собственный мир, где будут только честность, доверие и бесконечная нежность.";
+    "Ты знаешь, иногда я ловлю себя на мысли: как мне повезло, что ты есть.";
 
   useEffect(() => {
     if (!visible) return;
@@ -37,12 +37,12 @@ export default function Chat({ visible, onClose }) {
       </button>
       <div className="chat-container">
         <div className="chat-message chat-right">
-          <p className="person">Адиль...</p>
+          <p className="person">Байнур...</p>
           <div className="bubble">{message}</div>
         </div>
 
         <div className="chat-message chat-left">
-          <p className="person"> {showTyping ? "Аделина💕..." : ""}</p>
+          <p className="person"> {showTyping ? "Бегимай💞..." : ""}</p>
           <div className={showTyping ? "bubble typing person" : ""}>
             {showTyping ? "…" : ""}
           </div>

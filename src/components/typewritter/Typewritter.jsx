@@ -5,7 +5,7 @@ import "./typewritter.css";
 
 export default function TypingFeather() {
   const fullText =
-    "Ты — моя личная вселенная, вокруг которой вращаются все мои мысли и мечты. В твоих глазах я нашел бесконечность, а в твоей улыбке — свой вечный источник света.";
+    "Мне приятно просто сидеть рядом с тобой и ничего не делать. Ты делаешь мою жизнь проще и теплее. С тобой хочется быть каждый день.";
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const cursorRef = useRef(null);

@@ -7,14 +7,14 @@ export default function ChatAnswer({ visible, onClose }) {
   const [showTyping, setShowTyping] = useState(false);
 
   const baynurMessage =
-    "Я хочу построить с тобой наш собственный мир, где будут только честность, доверие и бесконечная нежность.";
+    "Ты знаешь, иногда я ловлю себя на мысли: как мне повезло, что ты есть.";
   const begimayMessage =
-    "В нашем мире даже тишина будет говорить на языке любви, а каждый вдох — напоминать, как прекрасно быть частью тебя.";
+    "Мне тоже везёт. Ты делаешь мою жизнь легче и счастливее😊";
 
   useEffect(() => {
     if (!visible) return;
 
-    setMessages([{ sender: "Адиль", text: baynurMessage }]);
+    setMessages([{ sender: "Байнур", text: baynurMessage }]);
     setCurrentText("");
     setShowTyping(true);
 
@@ -26,7 +26,7 @@ export default function ChatAnswer({ visible, onClose }) {
         clearInterval(typingInterval);
         setMessages((prev) => [
           ...prev,
-          { sender: "Аделина💞", text: begimayMessage },
+          { sender: "Бегимай💞", text: begimayMessage },
         ]);
         setShowTyping(false);
       }
@@ -65,7 +65,7 @@ export default function ChatAnswer({ visible, onClose }) {
           <div
             key={i}
             className={`chat-message ${
-              msg.sender === "Адиль" ? "chat-right" : "chat-left"
+              msg.sender === "Байнур" ? "chat-right" : "chat-left"
             }`}
           >
             <p className="person">{msg.sender}</p>
@@ -75,7 +75,7 @@ export default function ChatAnswer({ visible, onClose }) {
 
         {showTyping && (
           <div className="chat-message chat-left">
-            <p className="person">Аделина💕..</p>
+            <p className="person">Бегимай💕..</p>
             <div className="bubble">{currentText || "…"}</div>
           </div>
         )}

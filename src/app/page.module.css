@@ -16,10 +16,15 @@
     position: relative;
     object-fit: cover;
   }
-  .img1,
-  .img3 {
+  .img1 {
     min-height: 780px;
     width: 100%;
     position: relative;
+  }
+  .img3 {
+    width: 100%;
+    min-height: 690px;
+    position: relative;
+    object-fit: cover;
   }
 }
