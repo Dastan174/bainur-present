@@ -1,0 +1,99 @@
+@import url(https://fonts.googleapis.com/css?family=Marck+Script:regular);
+.chat-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* затемнение */
+  backdrop-filter: blur(8px); /* блюр фона */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* чтобы было поверх всего */
+}
+
+.chat-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.person {
+  font-size: 15px;
+}
+.chat-message {
+  display: flex;
+}
+
+.chat-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: end;
+  gap: 8px;
+}
+.chat-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 20px;
+  background-color: #ffe6f0;
+  font-family: "Marck Script", cursive;
+  position: relative;
+}
+
+.typing {
+  background-color: #f0f0f0;
+  color: transparent;
+  width: 27px;
+  height: 22px;
+  animation: blink 8s infinite;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.typing::after {
+  content: "…";
+  color: #333;
+  position: absolute;
+  left: 8px;
+  top: -7px;
+  /* animation: blink 10s infinite; */
+  font-size: 24px;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}

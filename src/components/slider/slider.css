@@ -1,0 +1,50 @@
+.quotes-slider {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 40px 20px;
+  background: #fff7f9; /* нежно-розовый фон */
+  scroll-behavior: smooth; /* плавный скролл */
+  /* background-image: url("https://img.freepik.com/free-vector/blurred-valentine-s-day-wallpaper_23-2148819570.jpg"); */
+}
+
+/* Обёртка с карточками */
+.quotes-wrapper {
+  display: inline-flex;
+  gap: 20px;
+  animation: slide 60s linear infinite 10s; /* автопрокрутка */
+}
+
+/* Каждая карточка */
+.quote-card {
+  flex-shrink: 0;
+  height: 190px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Шрифт можно свой подключить */
+.highlight {
+  font-family: Marck Script;
+  font-size: 21px;
+  width: 370px;
+  white-space: normal; /* ✅ разрешаем перенос строк */
+  word-break: break-word; /* ✅ переносим длинные слова */
+}
+/* Анимация */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

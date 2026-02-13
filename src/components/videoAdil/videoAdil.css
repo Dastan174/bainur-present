@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  h2 {
+    font-family: Marck Script;
+  }
+  .img {
+    height: 600px;
+    width: 100%;
+  }
+}

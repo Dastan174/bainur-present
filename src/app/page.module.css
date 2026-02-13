@@ -1,0 +1,25 @@
+.page {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+  .img {
+    width: 100%;
+    min-height: 830px;
+    position: relative;
+    object-fit: cover;
+  }
+
+  .img2 {
+    width: 100%;
+    min-height: 630px;
+    position: relative;
+    object-fit: cover;
+  }
+  .img1,
+  .img3 {
+    min-height: 780px;
+    width: 100%;
+    position: relative;
+  }
+}
