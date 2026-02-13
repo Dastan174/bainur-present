@@ -78,18 +78,18 @@ const page = () => {
       </div>
       {showRest && (
         <>
+          <Typewritter />
           <Story />
           <Insta />
-          <Typewritter />
           <PhotoReveal />
           <Slider />
-          <div className={styles.img2}>
-            <Image src="/images/trip.webp" fill alt="open" loading="lazy" />
+          <div className={styles.img1}>
+            <Image src="/images/six.png" fill alt="open" loading="lazy" />
           </div>
           <OpenChat />
           <Balloons />
           <div className={styles.img1}>
-            <Image src="/images/update.webp" fill alt="open" loading="lazy" />
+            <Image src="/images/winter.png" fill alt="open" loading="lazy" />
           </div>
           <VideoAdil />
           <LastChat />

@@ -43,20 +43,20 @@ export default function PhotoReveal() {
         {/* Исходное размытое фото */}
         <Image
           alt="cho"
-          src="/images/blur.webp"
+          src="/images/reveal.webp"
           className="blurred-photo"
           width={393}
-          height={400}
+          height={200}
           loading="lazy"
         />
 
         {/* Чистое фото, которое открывается */}
         <Image
           alt="cho"
-          src="/images/blur.webp"
+          src="/images/reveal.webp"
           className="clear-photo"
           width={393}
-          height={400}
+          height={250}
           loading="lazy"
           style={{
             clipPath: `inset(0 ${100 - progress}% 0 0)`,

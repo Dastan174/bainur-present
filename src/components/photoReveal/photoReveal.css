@@ -20,7 +20,7 @@
   position: relative;
   width: 90%;
   max-width: 600px;
-  height: 400px;
+  height: 300px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
@@ -31,17 +31,19 @@
 .blurred-photo {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 300px;
   background: url("/ваше-размытое-фото.jpg") center/cover;
   filter: blur(20px) brightness(0.9);
+  object-fit: cover;
 }
 
 .clear-photo {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 300px;
   background: url("/ваше-чистое-фото.jpg") center/cover;
   transition: clip-path 0.1s linear;
+  object-fit: cover;
 }
 
 .wipe-cursor {

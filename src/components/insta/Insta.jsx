@@ -16,7 +16,7 @@ export default function Insta() {
           <span>📤</span>
         </div>
 
-        <p className="likes">999 likes</p>
+        <p className="likes">999 mil</p>
 
         <p className="description">
           <strong>foreverlove</strong> Вечная любовь

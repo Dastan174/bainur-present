@@ -14,30 +14,65 @@ export default function Stories() {
   const [progress, setProgress] = useState(0);
   const [liked, setLiked] = useState(false);
   const startX = useRef(0);
+  const scrollY = useRef(0);
 
-  // Автопрогресс
+  // 🚫 Блокировка скролла
+  useEffect(() => {
+    if (activeIndex !== null) {
+      scrollY.current = window.scrollY;
+
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY.current}px`;
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, scrollY.current);
+    }
+
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, [activeIndex]);
+
+  // ⏳ Плавный прогресс через requestAnimationFrame
   useEffect(() => {
     if (activeIndex === null) return;
+
+    let start = null;
+    let frame;
+    const duration = 5000; // 5 секунд
 
     setProgress(0);
     setLiked(false);
 
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          nextStory();
-          return 0;
-        }
-        return p + 1;
-      });
-    }, 50);
+    const animate = (timestamp) => {
+      if (!start) start = timestamp;
 
-    return () => clearInterval(interval);
+      const elapsed = timestamp - start;
+      const percent = Math.min((elapsed / duration) * 100, 100);
+
+      setProgress(percent);
+
+      if (percent < 100) {
+        frame = requestAnimationFrame(animate);
+      } else {
+        nextStory();
+      }
+    };
+
+    frame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frame);
   }, [activeIndex]);
 
   const nextStory = () => {
     setActiveIndex((i) =>
-      i !== null && i < stories.length - 1 ? i + 1 : null,
+      i !== null && i < stories.length - 1 ? i + 1 : null
     );
   };
 
@@ -45,13 +80,14 @@ export default function Stories() {
     setActiveIndex((i) => (i !== null && i > 0 ? i - 1 : i));
   };
 
-  // Свайпы
+  // 👉 Свайпы
   const onTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
   };
 
   const onTouchEnd = (e) => {
     const diff = startX.current - e.changedTouches[0].clientX;
+
     if (diff > 50) nextStory();
     if (diff < -50) prevStory();
   };

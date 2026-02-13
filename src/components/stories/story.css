@@ -32,6 +32,7 @@
 .modal {
   position: fixed;
   inset: 0;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
@@ -40,7 +41,7 @@
 }
 
 .content {
-  position: relative; /* важно для кнопок и прогресса */
+  position: relative;
   width: 96%;
   height: 95%;
   display: flex;
@@ -52,6 +53,7 @@
   max-height: 70vh;
   width: 100%;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 /* Прогресс */
@@ -70,7 +72,6 @@
 .progress div {
   height: 100%;
   background: white;
-  transition: width 0.05s linear;
 }
 
 /* Лайк */
@@ -85,11 +86,13 @@
   opacity: 0.7;
   cursor: pointer;
   z-index: 10;
+  transition: 0.2s ease;
 }
 
 .like.active {
   color: red;
   transform: scale(1.2);
+  opacity: 1;
 }
 
 /* Закрыть */
