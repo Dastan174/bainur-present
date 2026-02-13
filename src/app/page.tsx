@@ -66,7 +66,7 @@ const page = () => {
         preload="auto" // ← предзагрузка
         crossOrigin="anonymous" // ← для CORS если нужно
       >
-        {/* <source src="/music.mp3" type="audio/mpeg/" /> */}
+        <source src="/music.mp3" type="audio/mpeg/" />
         Ваш браузер не поддерживает аудио.
       </audio>
       <div
