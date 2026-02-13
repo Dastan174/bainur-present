@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import "./story.css";
 
 const stories = [
-  { id: 1, image: "/images/story1.png", user: "forever" },
-  { id: 2, image: "/images/story2.png", user: "my" },
-  { id: 3, image: "/images/story3.png", user: "love" },
+  { id: 1, image: "/images/story1.webp", user: "forever" },
+  { id: 2, image: "/images/story2.webp", user: "my" },
+  { id: 3, image: "/images/story3.webp", user: "love" },
 ];
 
 export default function Stories() {
