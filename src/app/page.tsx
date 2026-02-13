@@ -10,6 +10,7 @@ import LastChat from "../components/lastChat/LastChat";
 import PhotoReveal from "../components/photoReveal/PhotoReveal";
 import VideoAdil from "../components/videoAdil/VideoAdil";
 import Story from "../components/stories/Story";
+import Insta from "../components/insta/Insta";
 
 const page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -65,7 +66,7 @@ const page = () => {
         preload="auto" // ← предзагрузка
         crossOrigin="anonymous" // ← для CORS если нужно
       >
-        <source src="/music.mp3" type="audio/mpeg" />
+        {/* <source src="/music.mp3" type="audio/mpeg/" /> */}
         Ваш браузер не поддерживает аудио.
       </audio>
       <div
@@ -75,9 +76,10 @@ const page = () => {
       >
         <Image priority src="/images/open.webp" fill alt="open" />
       </div>
-      <Story />
       {showRest && (
         <>
+          <Story />
+          <Insta />
           <Typewritter />
           <PhotoReveal />
           <Slider />
