@@ -30,7 +30,8 @@
 
 .post-image {
   width: 100%;
-  height: auto;
+  height: 440px;
+  object-fit: cover;
 }
 
 .post-content {

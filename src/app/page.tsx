@@ -11,6 +11,7 @@ import PhotoReveal from "../components/photoReveal/PhotoReveal";
 import VideoAdil from "../components/videoAdil/VideoAdil";
 import Story from "../components/stories/Story";
 import Insta from "../components/insta/Insta";
+import HoldHeart from "../components/holdHeart/HoldHeart";
 
 const Page = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -69,24 +70,25 @@ const Page = () => {
   return (
     <div className={styles.page}>
       {/* Аудио */}
-      <audio ref={audioRef} loop preload="auto" muted>
+      {/* <audio ref={audioRef} loop preload="auto" muted>
         <source src="/music.mp3" type="audio/mpeg" />
         Ваш браузер не поддерживает аудио.
-      </audio>
+      </audio> */}
 
       {/* Картинка для начала */}
       <div
         onClick={smoothScrollDown}
-        className={styles.img2}
+        className={styles.img3}
         style={{ display: "flex", alignItems: "center" }}
       >
-        <Image priority src="/images/open.webp" fill alt="open" />
+        <Image priority src="/images/play.png" fill alt="open" />
       </div>
 
       {/* Остальные блоки */}
       {showRest && (
         <>
           <Typewritter />
+          <HoldHeart />
           <Story />
           <Insta />
           <div className={styles.img3}>
@@ -97,8 +99,8 @@ const Page = () => {
             <Image src="/images/ml.webp" fill alt="open" loading="lazy" />
           </div>
           <Slider />
-          <div className={styles.img2}>
-            <Image src="/images/four.webp" fill alt="open" loading="lazy" />
+          <div className={styles.img1}>
+            <Image src="/images/four.png" fill alt="open" loading="lazy" />
           </div>
           <OpenChat />
           <div className={styles.img2}>
