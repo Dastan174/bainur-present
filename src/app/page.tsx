@@ -70,10 +70,10 @@ const Page = () => {
   return (
     <div className={styles.page}>
       {/* Аудио */}
-      {/* <audio ref={audioRef} loop preload="auto" muted>
+      <audio ref={audioRef} loop preload="auto" muted>
         <source src="/music.mp3" type="audio/mpeg" />
         Ваш браузер не поддерживает аудио.
-      </audio> */}
+      </audio>
 
       {/* Картинка для начала */}
       <div
